@@ -30,9 +30,10 @@ pub fn parser(lines: List(String)) {
       |> int.parse()
       |> result.unwrap(-1)
     let rounds =
-      game_rounds |> list.last() |> result.unwrap("") |> string.split("; ")
-    let rounds =
-      rounds
+      game_rounds
+      |> list.last()
+      |> result.unwrap("")
+      |> string.split("; ")
       |> list.map(fn(round) {
         round
         |> string.trim
